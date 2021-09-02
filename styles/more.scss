@@ -1,0 +1,57 @@
+.MainMore{
+    margin-top: 130px;
+    margin-left: 15px;
+}
+.loadingMore{
+   position: fixed;
+   bottom: 10px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 6;
+}
+.nameofMore{
+    position: fixed;
+    top: -30px;
+    width: 99%;
+    z-index: 3;
+    direction: rtl;
+    background: #210909;
+    font-weight: 100;
+    padding-right: 30px;
+    height:140px;
+    margin-right: 0.5vw;
+    padding-top: 90px;
+    color: rgb(194, 194, 194);
+}
+.itemMore{
+    width: 10.9vw;
+    margin-top: 0.5vw;
+    float: left;
+    padding-left: 0.5vw;
+}
+@media screen and (max-width: 1024px) {
+    .itemMore{
+        width: 16.0vw;
+        margin-top: 0.5vw;
+        padding-left: 1.1vw;
+    } 
+ 
+}
+
+@media screen and (max-width:700px) {
+    .itemMore{
+        width: 23.6vw;
+      
+    } 
+}
+@media screen and (max-width:500px) {
+    .itemMore{
+        width: 46.5vw;
+        margin-top: 1.5vw;
+
+    } 
+  
+
+}

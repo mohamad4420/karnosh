@@ -1,0 +1,50 @@
+.CardMain{
+  
+    margin: 1vw;
+width:15vw;
+height: 363px;
+    position: relative;
+}
+
+.searchTextField{
+    width: 60%; 
+    position: relative;
+    top: 20px;
+    left: 20%;
+
+
+}
+@media screen and (max-width: 1433px) {
+
+    .CardMain{
+        width: 20%;
+        margin: 2vw;
+    }
+    
+}
+
+@media screen and (max-width: 923px) {
+
+    .CardMain{
+        width: 30%;
+        margin: 1vw;
+    }
+    
+}
+
+@media screen and (max-width: 717px) {
+
+    .CardMain{
+        width: 40%;
+        margin: 3vw;
+    }
+}
+@media screen and (max-width: 573px) {
+
+    .CardMain{
+        width: 98%;
+     
+        margin: 0;
+      margin-top: 30px;
+    }
+}
