@@ -1,20 +1,12 @@
 import React, { Component } from 'react'
-import ReactPlayer from 'react-player'
+import loadable from '@loadable/component'
 import Link from 'next/link'
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import IconButton from '@material-ui/core/IconButton';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import Tooltip from '@material-ui/core/Tooltip';
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
-import Card from '@material-ui/core/Card';
-import Generess from '../Generess'
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import MyModel from '../MyModel'
+
+const IconButton = loadable(() => import('@material-ui/core/IconButton'))
+const Tooltip = loadable(() => import('@material-ui/core/Tooltip'))
+const PlayCircleOutlineIcon = loadable(() => import('@material-ui/icons/PlayCircleOutline'))
+const MyModel = loadable(() => import('../MyModel'))
+
 class itemSlider extends Component{
     constructor(props){
         super(props);

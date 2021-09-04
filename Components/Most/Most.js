@@ -1,21 +1,14 @@
 
-import Image from 'next/image'
-import dynamic from 'next/dynamic'
-import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
 import styles from '../../styles/most.module.scss'
+import loadable from '@loadable/component'
+import Image from 'next/image'
 
-const Generess = dynamic(() => import('../Generess'))
-const PlayArrowIcon = dynamic(() => import('@material-ui/icons/PlayArrow'))
-const AddIcon = dynamic(() => import('@material-ui/icons/Add'))
-const Chip = dynamic(() => import('@material-ui/core/Chip'))
-const Share = dynamic(() => import('../shared.js'))
-const VolumeOffIcon = dynamic(() => import('@material-ui/icons/VolumeOff'))
-const ArrowDropDownIcon = dynamic(() => import('@material-ui/icons/ArrowDropDown'))
+const Generess = loadable(() => import('../Generess'))
+const Chip = loadable(() => import('@material-ui/core/Chip'))
 
 
  function Most(props){
-   console.log(props)
    const [isMobile,setIsMobile]=useState(undefined)
    useEffect(()=>{
 if(window.innerWidth<500){
@@ -39,9 +32,9 @@ window.addEventListener('resize', function(event) {
     <div className={styles.MainMost}>
       <div className={styles.Contaneroverlay}></div>
       <div className={styles.ContanerContant}>
-      {isMobile?<img width="100%" height="100%" src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />:<img width="100%" height="100%" src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />}
+      {isMobile?<img width="100%" height="100%" src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />:<img width="100%" height="100%" src={props.data.Galary} layout="fill" title={props.data.name} alt={props.data.name} />}
       </div>     
-      <div className={styles.ContanerSpeker}><VolumeOffIcon/></div>
+      <div className={styles.ContanerSpeker}></div>
      <div className={styles.ContanerMost}>
      <div className={styles.nameMost}>{props.data.name}</div>
      <div className={styles.ContanerSp}>
@@ -59,14 +52,14 @@ window.addEventListener('resize', function(event) {
        <div className={styles.dateMost}>{props.data.date}</div>
      </div>
         <div className={styles.settingMost}>
-          <div className={styles.play}><PlayArrowIcon/>تشغيل</div>
-          <div className={styles.list}><AddIcon/> <span>المشاهده لاحقا</span></div>
-          <div className={styles.share}> <Share/></div>
+          <div className={styles.play}>تشغيل</div>
+          <div className={styles.list}> <span>المشاهده لاحقا</span></div>
+          <div className={styles.share}> </div>
         </div>
      <div className={styles.discriptionMost}>{props.data.Discription}</div>
      <div className={styles.TimeMost}>الوقت :  {props.data.time}</div>
      <div className={styles.heros}>الابطال</div>
-     <div className={styles.searss}><div><ArrowDropDownIcon/>المواسم</div></div>
+     <div className={styles.searss}><div>المواسم</div></div>
      </div>
 
     </div>

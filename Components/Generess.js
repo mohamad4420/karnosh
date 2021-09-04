@@ -1,6 +1,8 @@
 import React from 'react'
-import Button from '@material-ui/core/Button';
+import loadable from '@loadable/component'
 import Link from 'next/link'
+
+const Button = loadable(() => import('@material-ui/core/Button'))
 
 export default function Generess(props){
     return(

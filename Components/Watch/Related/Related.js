@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import dynamic from 'next/dynamic'
+import loadable from '@loadable/component'
+
 import style from '../../../styles/Related.module.scss';
 import CircularProgress from '@material-ui/core/CircularProgress';
-const Grid = dynamic(() => import('./Grid'))
+const Grid = loadable(() => import('./Grid'))
 
 
 function Related(){

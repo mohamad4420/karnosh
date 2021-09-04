@@ -1,11 +1,10 @@
 import {  useState } from 'react';
-import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import Grow from '@material-ui/core/Grow';
+import loadable from '@loadable/component'
 
-const Swiper = dynamic(() => import('react-id-swiper'))
-const AppsIcon = dynamic(() => import('@material-ui/icons/Apps'))
-const ItemSlider = dynamic(() => import('./ItemSlider'))
+const Swiper = loadable(() => import('react-id-swiper'))
+const AppsIcon = loadable(() => import('@material-ui/icons/Apps'))
+const ItemSlider = loadable(() => import('./ItemSlider'))
 
  function  Slider(props) {
    
@@ -55,17 +54,16 @@ const ItemSlider = dynamic(() => import('./ItemSlider'))
             <>
            <div className="MainSlideeer" >
             <div className="nameSliderr">
-              <Link href={'/More/'+props.more} passHref>
+           
                 <a>
               <span>{props.name}</span>
               </a>
-              </Link>
+        
             </div>
-              <Link href={'/More/'+props.more}>
+          
 
               <AppsIcon  style={{color:'#a39999',margin:3,cursor:"pointer"}}/>
-
-              </Link>
+ 
             <Swiper  {...params} >
               {
               data.map(function(filme,i){

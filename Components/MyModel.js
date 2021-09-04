@@ -1,20 +1,19 @@
-import React, { Component, useState } from 'react'
-import ReactPlayer from 'react-player'
-import Link from 'next/link'
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import IconButton from '@material-ui/core/IconButton';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import Tooltip from '@material-ui/core/Tooltip';
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
-import Card from '@material-ui/core/Card';
-import Generess from './Generess'
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import CloseIcon from '@material-ui/icons/Close';
+import React, {  useState } from 'react'
+import loadable from '@loadable/component'
+
+const ReactPlayer = loadable(() => import('react-player'))
+const Modal = loadable(() => import('@material-ui/core/Modal'))
+const Backdrop = loadable(() => import('@material-ui/core/Backdrop'))
+const Fade = loadable(() => import('@material-ui/core/Fade'))
+const IconButton = loadable(() => import('@material-ui/core/IconButton'))
+const InfoOutlinedIcon = loadable(() => import('@material-ui/icons/InfoOutlined'))
+const Tooltip = loadable(() => import('@material-ui/core/Tooltip'))
+const Generess = loadable(() => import('./Generess'))
+const CloseIcon = loadable(() => import('@material-ui/icons/Close'))
+const Typography = loadable(() => import('@material-ui/core/Typography'))
+
+
+
 export default function MyModel(props){
     const [open,setOpen]=useState(false)
 
