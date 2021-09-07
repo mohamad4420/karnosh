@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import loadable from '@loadable/component'
 
+const Menu = loadable(() => import('../../Components/Menu/Menu'))
 const InfiniteScroll = loadable(() => import('react-infinite-scroll-component'))
 const CircularProgress = loadable(() => import('@material-ui/core/CircularProgress'))
 const ItemSlider = loadable(() => import('../../Components/slider/ItemSlider'))
@@ -69,7 +70,7 @@ export default function More({ data }) {
   //return heare
   return(
     <>
-      
+      <Menu/>
        <div className="MainMore" key={router.query.gen}>
          <h1 className="nameofMore">{router.query.gen}</h1>
         <InfiniteScroll

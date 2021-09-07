@@ -2,7 +2,7 @@ import React, { useEffect, useState }  from 'react'
 import Head from "next/head"
 import axios from 'axios'
 import loadable from '@loadable/component'
-
+const Menu = loadable(() => import('../../Components/Menu/Menu'))
 const Taps = loadable(() => import('../../Components/Watch/Taps'))
 const Most = loadable(() => import('../../Components/Most/Most'))
 
@@ -43,7 +43,7 @@ function Movie({ SSR }) {
 <meta name="copyright" content="كرنوش  | افلام  و مسلسلات وانمي  مترجمة اون لاين"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 </Head>
-   
+<Menu/>
         <Most
         key={SSR.name}
         data={SSR}
