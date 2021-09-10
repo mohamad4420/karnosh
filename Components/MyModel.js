@@ -1,6 +1,5 @@
 import React, {  useState } from 'react'
 import loadable from '@loadable/component'
-
 const ReactPlayer = loadable(() => import('react-player'))
 const Modal = loadable(() => import('@material-ui/core/Modal'))
 const Backdrop = loadable(() => import('@material-ui/core/Backdrop'))

@@ -17,6 +17,7 @@ function Home(
 
   return (
    <>
+  
 
        <Menu/>
      <Most
@@ -49,7 +50,7 @@ function Home(
        more="MovieUbdate"
        key="MovieUbdateMain"
       />
-      
+
   </div>
 
 

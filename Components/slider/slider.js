@@ -69,13 +69,9 @@ const ItemSlider = loadable(() => import('./ItemSlider'))
               data.map(function(filme,i){
 
               return(
-                <Grow key={Math.random() * 1000000000}
-                in={true}
-                style={{ transformOrigin: '0 0 0' }}
-                {... { timeout: 500+100*i }}
-              >
+       
                <div key={i+filme.name} className="ItemSwiper"><ItemSlider  data={filme} /></div> 
-              </Grow>
+   
               )
               })
               }

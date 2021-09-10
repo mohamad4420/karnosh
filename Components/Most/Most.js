@@ -32,7 +32,7 @@ window.addEventListener('resize', function(event) {
     <div className={styles.MainMost}>
       <div className={styles.Contaneroverlay}></div>
       <div className={styles.ContanerContant}>
-      {isMobile?<img width="100%" height="100%" src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />:<img width="100%" height="100%" src={props.data.Galary} layout="fill" title={props.data.name} alt={props.data.name} />}
+      {isMobile?<Image  src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />:<Image  src={props.data.Galary} layout="fill" title={props.data.name} alt={props.data.name} />}
       </div>     
       <div className={styles.ContanerSpeker}></div>
      <div className={styles.ContanerMost}>

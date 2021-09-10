@@ -1,11 +1,11 @@
 import React from 'react';
 import loadable from '@loadable/component'
-
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Link from 'next/link'
+import Image from 'next/image'
+const Typography = loadable(() => import('@material-ui/core/Typography'))
+const Toolbar = loadable(() => import('@material-ui/core/Toolbar'))
+const AppBar = loadable(() => import('@material-ui/core/AppBar'))
 const Acount = loadable(() => import('./Acount'))
 const IconButton = loadable(() => import('@material-ui/core/IconButton'))
 const Button = loadable(() => import('@material-ui/core/Button'))
@@ -29,11 +29,11 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
-        <Toolbar>
+      <AppBar position="fixed" >
+        <Toolbar >
           <Link href="/">
         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-        <img src='/icon/favicon.png' width="40px" height="40px"></img>
+        <Image  src='/icon/favicon.png' width="40px" height="40px"/>
         </IconButton>
         </Link>
         <Button color="inherit">افلام</Button>

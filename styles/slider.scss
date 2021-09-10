@@ -160,29 +160,14 @@ background: #720101;
 }
 .numberOfServer{
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.521);
   bottom:  10px;
   right: 10px;
-  color: #fff ;
   z-index: 2;
 }
 .Rating{
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  border-radius: 10px;
-  background: rgba(255, 217, 0, 0.973);
   top:  10px;
   left: 10px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.74) ;
   z-index: 2;
 
  
@@ -441,18 +426,7 @@ height: 1.6vw;
     top: -60px;
 
   }
-  .Rating{
 
-    width: 40px;
-    border-radius: 10px;
-    font-size: 13px;
-    top:  5px;
-    left: 5px;
-    font-weight: 300;
-
-  
-   
-  }
   .overlayReactPlayerModel{
     height: 56.4vw;
     width:100%;
@@ -473,13 +447,7 @@ height: 1.6vw;
     left:0;
 
   }
-  .numberOfServer{
-    width: 50px;
-    bottom:  5px;
-    right: 5px;
-    font-size: 13px;
-    padding: 0px;
-  }
+
   .contannerModelSlider{
     margin-top: 60vw;
   
