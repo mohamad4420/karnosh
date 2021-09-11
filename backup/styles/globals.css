@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Cairo&family=Lateef&family=Markazi+Text:wght@500&family=Tajawal:wght@900&display=swap');
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #210909;
+}
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes alert {
+  0% {
+    margin-top: -60px;
+  }
+  20% {
+    margin-top: 60px;
+  }
+  70%{
+    opacity: 1; margin-top: 60px;
+  }
+  100%{
+    opacity: 0; margin-top: 60px;
+  }
+}
+
+.alert{
+  position: absolute;
+  margin-top: -60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  animation: 3s 1 linear;
+  animation-name: alert;
+  -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+}
+
+
+.MuiSvgIcon-root {
+  user-select: none;
+  -webkit-user-select: none;
+}
+.viewer-button{
+display: none;
+}
+
+
+.sooory{
+  width: 100%;
+  height: 100vh;
+  direction: rtl;
+  position: absolute;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3vw;
+
+}
+.hide{
+  animation: 1s 1 linear;
+  animation-name: hide;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.show{
+  animation: 1s 1 linear;
+  animation-name: show;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.cover{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: black;
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+}
+
+* {
+  box-sizing: border-box;
+font-family: 'Lateef', cursive;
+}
+
+
+
+
+.slash{
+  margin-top: 50px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 1;
+}
+link {
+  text-decoration: inherit;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px grey; 
+ }
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #720101; 
+  border-radius: 15px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+
+.lds-roller {
+  display: inline-block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: calc( 50% - 40px );
+  top: calc( 30% - 40px );
+}
+
+
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #720101;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+

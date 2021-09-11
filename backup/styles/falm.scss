@@ -1,0 +1,171 @@
+
+
+
+
+.mainChange{
+    width: 100%;
+    position: relative;
+    height: 38px;
+    margin-top: -33px;
+    margin-bottom: 33px;
+
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  border-bottom: 2px solid #720101;
+ bottom: -4px;
+ left: 0;
+ right: 0;
+ transition: all 500ms;
+}
+
+
+#filled-basic{
+  color: white;
+
+}
+.searchSerss{
+  width: 100%;
+  position: relative;
+  right: 0;
+ 
+ overflow: hidden;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  bottom: 20px;
+}
+
+.mainChange::before{
+
+  content: '';
+  border-radius: 50%;
+  width: 100%;
+  background: #0e0202;
+  height: 1px;
+  position: absolute;
+ bottom: 3px;
+
+  
+
+}
+
+.SersNo{
+    position: relative;
+    display: flex;
+    bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    width: 220px;
+    float: right;
+    margin-left: 10px;
+    height: 100%;
+    cursor: pointer;
+    
+    
+}
+.imagespisss{
+  z-index: -2;
+}
+
+
+
+
+.SersNo::after{
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #720101;
+    bottom: -4px;
+   left: 0;
+   right: 100%;
+   transition: all 500ms;
+}
+
+.SersNo:hover:after{
+    right: 0;
+}
+.footeFalm{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 60px;
+}
+.numbners{
+
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.spisss{
+  position: relative;
+ display: flex;
+ flex-wrap: wrap;
+ float: right;
+ margin: 0.55vw;
+  width: 6vw;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.74);
+  height: 60px;
+  background: #72010133;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 2px solid #61616175;
+ 
+}
+
+.spisss:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+	transition: 0.5s;
+}
+
+.spisss:hover:after{
+	left: 100%;
+}
+@media screen and (max-width: 950px) {
+    .spisss{
+     
+      width: 21.8vw;
+      margin: 1.3vw;
+    }
+
+}
+@media screen and (max-width: 500px) {
+  .mainChange{
+    height: auto;
+    margin-top: 0;
+}
+    .SersNo{
+      
+      font-size: 16px;
+        top: -30px;
+        width: 24vw;
+        margin-right: 5vw;
+
+    }
+    .spisss{
+     
+      width: 43.7vw;
+      margin: 2.4vw;
+    }
+
+}

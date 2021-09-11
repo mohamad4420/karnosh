@@ -1,0 +1,143 @@
+@keyframes round {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .imgscroll{
+    animation: round infinite 1s linear;
+
+  }
+.testtttt{
+    position: fixed;
+    z-index: 5;
+    width: 60%;
+    height: 120px;
+    color: white;
+    background: black
+}
+.sharedIcon{
+   position: fixed;
+   z-index: 5;
+   top: 88px;
+   direction: rtl;
+   span{margin-left:10px ;}
+}
+.MainItemsMore{
+    position: relative;
+    top: 60px;
+}
+.spasificationMore{
+    width: 100%;
+    height: 140px;
+    top: 0;
+    left: 0;
+    display: flex;
+    background: #210909;
+    position: fixed;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    z-index: 2;
+     direction: rtl;
+     padding: 20px;
+    span{
+   margin-left: 10px;
+   color: aliceblue;
+   font-style: italic;
+ position: relative;
+ top: 22px;
+   h1{
+       font-size: 20px;
+       font-weight: 100;
+       margin-top: 18px;
+   }
+   h2{
+    font-weight: 100; 
+    
+
+   }
+    }
+
+}
+.endScroll{
+    position: fixed;
+    width: 36vw;
+    font-size: 1.45vw;
+    height: 80px;
+    background: rgba($color: #720101, $alpha: 0.9);
+    padding-left: 0.5vw;
+    padding-top: 10px;
+    border-radius: 5px;
+    bottom: -30px;
+    left: calc( 50% - 18vw );
+    color: white;
+}
+.endInfinityScroll{
+    position: fixed;
+    bottom: 1vh;
+    left: calc( 50% - 30px );
+    color: white;
+}
+.mainMore{
+    margin-top: 60px;
+margin-left: 1vw;    
+}
+
+
+
+@media screen and (max-width: 974px) {
+
+ 
+    
+    .mainMore{
+        margin-top: 60px;
+   
+    }
+ 
+ 
+
+}
+
+@media screen and (max-width: 500px) {
+    .sharedIcon{
+  
+        top: 47px;
+        span{margin-left:5px ;}
+     }
+    .spasificationMore{
+        height: 100px;
+
+
+         padding: 10px;
+        span{
+       margin-left: 5px;
+
+        }
+    
+    }
+    .endScroll{
+
+        width: 90vw;
+        font-size: 3.5vw;
+        height: 60px;
+        padding-left: 2.5vw;
+        padding-top: 10px;
+
+        bottom: -30px;
+        left: calc( 50% - 45vw );
+  
+    }
+
+ 
+
+    .lodingMore{
+        left: calc( 40% );
+    }
+
+
+
+  
+
+}
