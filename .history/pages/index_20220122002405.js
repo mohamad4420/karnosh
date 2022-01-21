@@ -59,8 +59,7 @@ function Home(
   )
 }
 export async function getStaticProps(context){
-  let data = await axios.post('http://karnoshapi.herokuapp.com/DataVideo/Home')
-
+  let data = await axios.post('http://localhost:5000/dataVideo/Home')
 return{
   props:{
     data:data.data

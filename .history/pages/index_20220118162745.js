@@ -32,7 +32,7 @@ function Home(
        key="MovieUbdateMain"
       />
 
-      <Slider
+<Slider
        name="احدث الافلام المضافه"
        get={ data.Main}
        more="MovieUbdate"

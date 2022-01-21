@@ -10,7 +10,6 @@ const Chip = loadable(() => import('@material-ui/core/Chip'))
 
  function Most(props){
    const [isMobile,setIsMobile]=useState(undefined)
-   
    useEffect(()=>{
 if(window.innerWidth<500){
   setIsMobile(true)
@@ -25,7 +24,7 @@ window.addEventListener('resize', function(event) {
   }
 
 }, true);
-
+console.log(props)
    },[])
   return(
     <>

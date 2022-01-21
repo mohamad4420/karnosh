@@ -10,7 +10,6 @@ const Chip = loadable(() => import('@material-ui/core/Chip'))
 
  function Most(props){
    const [isMobile,setIsMobile]=useState(undefined)
-   
    useEffect(()=>{
 if(window.innerWidth<500){
   setIsMobile(true)
@@ -33,7 +32,7 @@ window.addEventListener('resize', function(event) {
     <div className={styles.MainMost}>
       <div className={styles.Contaneroverlay}></div>
       <div className={styles.ContanerContant}>
-      {isMobile?<Image  src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />:<Image  src={props.data.Galary} layout="fill" title={props.data.name} alt={props.data.name} />}
+      {isMobile?<Image  src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />:<Image  src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />}
       </div>     
       <div className={styles.ContanerSpeker}></div>
      <div className={styles.ContanerMost}>
