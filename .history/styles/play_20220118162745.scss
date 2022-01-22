@@ -1,0 +1,218 @@
+@keyframes round {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.ifrnb{
+  position: absolute;
+  width: 100vw;
+
+  height:calc( 100vh  ) ;
+  z-index: -2;
+}
+
+.alertLoadingPlays{
+  color: white;
+  display: flex;
+  width: 100vw;
+ position:absolute;
+ top: 55vh;
+ font-size: 18px;
+ z-index: -5;
+  justify-content: center;
+  align-items: center;
+}
+.spiner{
+  animation: round infinite 1s linear;
+}
+.backSeress{
+  position: absolute;
+  z-index: 10;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+ top: 50vh;
+  left: 0;
+  color: white;
+}
+.nextSeress{
+  position: absolute;
+  z-index: -1;
+  top: 50vh;
+  right: 0;
+  color: white;
+}
+.back{
+  position: absolute;
+  top: 2.5vw;
+  right: 1%;
+  color: white;
+  transform: rotate(180deg);
+  opacity: 0.6;
+   &:hover{
+    opacity: 1;
+  }
+}
+.listServerMain{
+  position: absolute;
+  top: 2.5vw ;
+ right: calc(3vw + 40px);
+ cursor: pointer;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+
+ height: 50px;
+ border-radius: 8px ;
+ opacity: 0.6;
+
+ &:hover{
+   opacity: 1;
+ }
+}
+.srv{
+  position: absolute;
+  right: -80px;
+  width: 200px;
+  max-height: 320px;
+  overflow-y: auto;
+  background:rgba(#1d0101,1);
+  top: 65px;
+  border-radius: 8px;
+}
+.ItemServer{
+  position: relative;
+  left: 5%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+  background:rgba(#720101, 0.8);
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 90%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contanerPlays{
+    position: absolute;
+     bottom:0px;
+     left: calc( 50% - 28.405vw );
+    width: 56.81vw;
+    height: 46vw;
+   
+}
+.movies{
+      position: absolute;
+      width: 92.5%;
+    left: 1.95vw;
+    bottom: 10.85vw;
+    height: 71.39%;
+    border-radius: 5px;
+    background: darkcyan;
+  
+}
+
+.serversMain{
+  width: 20%;
+  height: calc( 100vh - 60px );
+  position: absolute;
+  right: 0.9%;
+  top: 60px;
+}
+.servers{
+  color: white;
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: rgba(#720101, 1);
+  font-size: 1.2em;
+   float: left;
+   margin: 13px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.5s;
+   &:hover{
+     background: green;
+   }
+}
+.Tl{
+  width: 100%;
+  background: rgba(#720101, 0.3);
+  height: 60px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 2em;
+   color: white;
+   text-align: center;
+   padding-top:10px;
+}
+
+
+@media screen and (max-width: 1260px) {
+  .serversMain{
+    width: 100%;
+    height: auto;
+   display: flex;
+    flex-wrap: wrap;    
+   top: 120px;
+    justify-content: center;
+  }
+  .contanerPlays{
+    position: absolute;
+    left: 40%;
+    bottom: calc( 50% - 35vw );
+  }
+.Tl{
+  display: none;
+}
+
+
+}
+
+@media screen and (max-width: 500px) {
+  .srv{
+    top: 50px;
+  }
+  .listServerMain{
+   right: calc(11.5vw + 10px);
+  }
+
+
+    .contanerPlays{
+   
+         bottom:10vh;
+         left: 1vw;
+        width: 98vw;
+        height: 79.35222672064777vw;
+       
+    }
+    .movies{
+      left: 3.5vw;
+      bottom: 19.25vw;
+      height: 71.39%;
+  }
+
+}
