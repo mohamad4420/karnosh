@@ -9,6 +9,7 @@ const AppBar = loadable(() => import('@material-ui/core/AppBar'))
 const Acount = loadable(() => import('./Acount'))
 const IconButton = loadable(() => import('@material-ui/core/IconButton'))
 const Button = loadable(() => import('@material-ui/core/Button'))
+const Search = loadable(() => import('./Search'))
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,7 +43,9 @@ export default function ButtonAppBar() {
         <Button color="inherit">قائمتي</Button>      
           <Typography  className={classes.title}>
           </Typography>
+          <Search/>
           <Acount/>
+       
         </Toolbar>
       </AppBar>
     </div>

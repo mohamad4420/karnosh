@@ -1,14 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import loadable from '@loadable/component'
-
 const Slider = loadable(() => import('../Components/slider/slider'))
 const Most = loadable(() => import('../Components/Most/Most'))
-
-
-
-
-
 function Home(
   {
    data
@@ -16,10 +10,7 @@ function Home(
 
   return (
    <>
-  
-
-
-     <Most
+       <Most
      data={ data.Main[0]}
       key="home"
       />
@@ -32,20 +23,32 @@ function Home(
       />
 
       <Slider
-       name="احدث الافلام المضافه"
-       get={ data.Main}
+       name="افلام مترجمه"
+       get={ data.Mt}
        more="MovieUbdate"
        key="MovieUbdateMain"
       />
           <Slider
-       name="احدث الافلام المضافه"
-       get={ data.Main}
+       name="افلام عربيه"
+       get={ data.Ar}
        more="MovieUbdate"
        key="MovieUbdateMain"
       />
           <Slider
-       name="احدث الافلام المضافه"
-       get={ data.Main}
+       name="افلام تركيه"
+       get={ data.Tr}
+       more="MovieUbdate"
+       key="MovieUbdateMain"
+      />
+        <Slider
+       name="افلام هنديه"
+       get={ data.Hn}
+       more="MovieUbdate"
+       key="MovieUbdateMain"
+      />
+        <Slider
+       name="افلام وثائقيه"
+       get={ data.Wth}
        more="MovieUbdate"
        key="MovieUbdateMain"
       />
