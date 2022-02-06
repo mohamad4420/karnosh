@@ -37,7 +37,9 @@ export default function ButtonAppBar() {
         <Image  src='/icon/favicon.png' width="40px" height="40px"/>
         </IconButton>
         </Link>
+        <Link href="/movie">
         <Button color="inherit">افلام</Button>
+        </Link>
         <Button color="inherit">مسلسلات</Button>
         <Button color="inherit" >انمي</Button>
         <Button color="inherit">قائمتي</Button>      

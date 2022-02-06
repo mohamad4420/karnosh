@@ -24,7 +24,7 @@ export default function Play(){
     .catch((err)=>{
      console.log(err)
     })
-    },[])
+    },[router.asPath])
     return (
         <>
         <div className="MainPlay">

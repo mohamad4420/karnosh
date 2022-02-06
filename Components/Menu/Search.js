@@ -1,5 +1,6 @@
-import React, {  useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import loadable from '@loadable/component'
+import axios from 'axios'
 const Modal = loadable(() => import('@material-ui/core/Modal'))
 const Backdrop = loadable(() => import('@material-ui/core/Backdrop'))
 const Fade = loadable(() => import('@material-ui/core/Fade'))
@@ -7,14 +8,28 @@ const IconButton = loadable(() => import('@material-ui/core/IconButton'))
 const Tooltip = loadable(() => import('@material-ui/core/Tooltip'))
 const CloseIcon = loadable(() => import('@material-ui/icons/Close'))
 const SearchIcon = loadable(() => import('@mui/icons-material/Search'))
-const TextField = loadable(() => import('@mui/material/TextField'))
+const ItemSearch = loadable(() => import('./ItemSearch'))
 
-function getData(event){
-  console.log(event.target.value)
-}
+
+
 
 export default function MyModel(props){
     const [open,setOpen]=useState(false)
+    const [data,setData]=useState([])
+    const getData=(event)=>{
+      if(event.target.value!=""){
+        axios.post(process.env.url+'/DataVideo/search',{'name':event.target.value})
+        .then((res)=>{
+          setData(res.data)
+        })
+        .catch((err)=>{
+        console.log(err)
+        })
+          }else{
+            setData([])
+          }
+        }
+
    const handleOpen=()=>{
         setOpen(true)
           }
@@ -23,6 +38,9 @@ export default function MyModel(props){
         
        }
 
+       useEffect(()=>{
+         console.log(data)
+       },[data])
     return(
     <>
 
@@ -45,24 +63,24 @@ export default function MyModel(props){
                   }}
                 >
                   <Fade in={open} >
-                    <div className="MainModel">
-                      <div className="overlayReactPlayerModel">
+                    <div className="MainSearchModel">
+                      <div className="overlaySearch">
                       <IconButton onClick={handleClose}  style={{color:"#fff"}} aria-label="المزيد من المعلومات">
                         <CloseIcon style={{fontSize:38}} />
                         </IconButton>
+                        <input onChange={(e)=>{getData(e)}} className="inputSearch"></input>
                       </div>
                       <div className='SearchBox'>
-                      <TextField
-                      onKeyPress={(e)=>getData(e)}
-                      dir='rtl'   
-                      color="primary"
-                      variant="filled"
-                      className="SearchFiled"
-                      focused
-                      label="لرجاء وضع الاسم"
-                      />
-
-                      </div>
+                     
+                     {
+                     data.map(function (data,i){
+                       console.log(data)
+                       return(
+                       <ItemSearch myFunction={handleClose} key={"ItemSearchData"+data.name+i} data={data}/>
+                       )
+                      })
+                       }
+                     </div>
                   </div>
                   </Fade>
                 </Modal> 

@@ -33,7 +33,7 @@ window.addEventListener('resize', function(event) {
     <div className={styles.MainMost}>
       <div className={styles.Contaneroverlay}></div>
       <div className={styles.ContanerContant}>
-      {isMobile?<Image  src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />:<Image  src={props.data.Galary} layout="fill" title={props.data.name} alt={props.data.name} />}
+      {isMobile?<Image  src={props.data.poster} layout="fill" title={props.data.name} alt={props.data.name} />:<Image  src={props.data.galary} layout="fill" title={props.data.name} alt={props.data.name} />}
       </div>     
       <div className={styles.ContanerSpeker}></div>
      <div className={styles.ContanerMost}>
@@ -48,7 +48,7 @@ window.addEventListener('resize', function(event) {
         />
          </div>
        <div key="mostGeneress" className={styles.mostGeneress}>
-         <Generess data={{ gen:props.data.Genres,tp:props.data.Type}}/>
+         <Generess data={{ gen:props.data.genres,tp:props.data.type}}/>
        </div>
        <div className={styles.dateMost}>{props.data.date}</div>
      </div>
@@ -57,7 +57,7 @@ window.addEventListener('resize', function(event) {
           <div className={styles.list}> <span>المشاهده لاحقا</span></div>
           <div className={styles.share}> </div>
         </div>
-     <div className={styles.discriptionMost}>{props.data.Discription}</div>
+     <div className={styles.discriptionMost}>{props.data.description}</div>
      <div className={styles.TimeMost}>الوقت :  {props.data.time}</div>
      <div className={styles.heros}>الابطال</div>
      <div className={styles.searss}><div>المواسم</div></div>

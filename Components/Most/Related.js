@@ -10,7 +10,7 @@ export default function Home(props) {
 
          useEffect(()=>{
              if(window.location.href.search('Watch')!=-1){
-            axios.post(process.env.domains+'/api/movie/related',{"Related":props.Related})
+            axios.post(process.env.domains+'/api/movie/related',{"Related":props.related})
             .then((res)=>{
                 setData(res.data)
                 setShow(true)
@@ -49,7 +49,7 @@ export default function Home(props) {
  }else{
   Show=
   <>
-{      props.Related.map(function(data,i){
+{      props.related.map(function(data,i){
                return(
                  <>
                  <Link href={'/Watch/'+encodeURI(data.replace(/ /g,'-'))}  key={Math.random() * 1000000000}  >

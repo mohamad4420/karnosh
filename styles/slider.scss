@@ -106,10 +106,18 @@
   position: fixed;
   z-index: 3;
   width:700px;
-  top: 335px;
+  top: 320px;
   height: 2px;
-background: #720101;
 
+
+}
+.muteandunmute{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 250px;
+  z-index: 5;
+  right: 25px;
 }
 .contannerBoxSlider{
   position: relative;

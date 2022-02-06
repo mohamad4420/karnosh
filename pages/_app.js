@@ -16,14 +16,18 @@ import '../styles/p404.scss'
 import '../styles/Comment.scss'
 import '../styles/sherd.scss'
 import loadable from '@loadable/component'
+import Theme from '../Components/theme'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 const Menu = loadable(() => import('../Components/Menu/Menu'))
-
-
 function MyApp({ Component, pageProps }) {
   return( 
   <>
-  <Menu/>
-  <Component {...pageProps} />
+  <ThemeProvider theme={Theme}>
+      <Menu/>
+      <Component {...pageProps} />
+    </ThemeProvider>
+
   </>
     )
 }

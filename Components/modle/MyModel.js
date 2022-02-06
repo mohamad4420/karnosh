@@ -11,12 +11,18 @@ const Generess = loadable(() => import('../Generess'))
 const CloseIcon = loadable(() => import('@material-ui/icons/Close'))
 const Typography = loadable(() => import('@material-ui/core/Typography'))
 const ItemModle = loadable(() => import('./itemModle'))
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import Slider from '@mui/material/Slider';
 
 
 
 export default function MyModel(props){
     const [open,setOpen]=useState(false)
-
+    const [duration,setDuration]=useState(0)
+    const [playedInOne,setPlayedInOne]=useState(0)
+    const [play,setPlay]=useState(true)
+    const [sound,setSound]=useState(1)
    const handleOpen=()=>{
         setOpen(true)
           }
@@ -24,25 +30,25 @@ export default function MyModel(props){
         setOpen(false)
         
        }
-       let Type=""
-       if(props.data.Type=="movie_mt"){
-        Type="افلام مترجمه"
-       }else if(props.data.Type=="movie_ar"){
-        Type="افلام عربيه"
-       }else if(props.data.Type=="movie_tr"){
-        Type="افلام تركيه"
-       }else if(props.data.Type=="movie_hn"){
-        Type="افلام هنديه"
-       }else if(props.data.Type=="movie_wth"){
-        Type="افلام وثائقيه"
+       let type=""
+       if(props.data.type=="movie_mt"){
+        type="افلام مترجمه"
+       }else if(props.data.type=="movie_ar"){
+        type="افلام عربيه"
+       }else if(props.data.type=="movie_tr"){
+        type="افلام تركيه"
+       }else if(props.data.type=="movie_hn"){
+        type="افلام هنديه"
+       }else if(props.data.type=="movie_wth"){
+        type="افلام وثائقيه"
        }else {
-        Type="N/A"
+        type="N/A"
        }
     return(
     <>
-                    <Tooltip title="المزيد من المعلومات" className="InformationSliderInsidee">
+                 <Tooltip title="المزيد من المعلومات" className="InformationSliderInsidee">
                  <IconButton onClick={handleOpen}  style={{color:"#fff"}} aria-label="المزيد من المعلومات">
-                 <InfoOutlinedIcon style={{fontSize:38}} />
+                 <InfoOutlinedIcon style={{fontSize:props.size==undefined?38:props.size}} />
                  </IconButton>
                  </Tooltip>
 
@@ -75,26 +81,45 @@ export default function MyModel(props){
                           origin:'https://www.karnosh.ml/' }
                       }
                     }}
-                    
                     className="videoT" 
                     width="100%" 
                     height="450px"
-                    volume={0.2}
-                    playing={true}
+                    onSeek={(e) => console.log('onSeek', e)}
+                    volume={0.05}
+                  
+                    playing={play}
+                    loop
+                    muted={sound==1?false:true}
+                    onProgress={(e)=>setPlayedInOne(e.played * 100)}
+                   
                     url={"https://www.youtube.com/embed/"+props.data.traler}
                     playsinline={true}
-                    controls={false}
+                    controls={true}
                     ></ReactPlayer>
                   </div>
-                  <div className="ColorTransition"></div>
+                  <div className="muteandunmute">
+                  <IconButton onClick={()=>{sound==1?setSound(0):setSound(1)}}  style={{color:"#fff"}} aria-label="المزيد من المعلومات">
+                        {sound==1? <VolumeUpIcon style={{fontSize:38}} />: <VolumeOffIcon style={{fontSize:38}} />}
+                   </IconButton>
+                  </div>
+                  <div className="ColorTransition">
+                        <Slider
+                        size="small"
+                        value={playedInOne}
+                        defaultValue={0}
+                        step={1}
+                        color='secondary'
+                        valueLabelDisplay={'off'}
+                      />
+                  </div>
                   <div className="contannerModelSlider">
                     <div className="nameSliderMore">{props.data.name}</div>
-                    <div className="contannerGeneress"><Generess data={  { gen:props.data.Genres,tp:props.data.Type}}/></div>
+                    <div className="contannerGeneress"><Generess data={  { gen:props.data.genres,tp:props.data.type}}/></div>
                     <div className="contannerBoxSlider">
                     <Typography className="center white"  variant="p" component="p">
                         {props.data.Discription}
                     </Typography>
-                    <ItemModle  firstName="التصنيف" firstData={Type} lastName="الدوله" lastData={props.data.country.toString()}/>
+                    <ItemModle  firstName="التصنيف" firstData={type} lastName="الدوله" lastData={props.data.country.toString()}/>
                     <ItemModle  firstName="الوقت" firstData={props.data.Duration} lastName="الدقه" lastData={props.data.quality}/>
                     </div>
                     </div>

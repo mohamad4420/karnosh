@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import loadable from '@loadable/component'
-const Slider = loadable(() => import('../Components/slider/slider'))
-const Most = loadable(() => import('../Components/Most/Most'))
+const Slider = loadable(() => import('../../Components/slider/slider'))
+const Most = loadable(() => import('../../Components/Most/Most'))
 function Home(
   {
    data
