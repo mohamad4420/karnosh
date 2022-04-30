@@ -1,33 +1,63 @@
-import '../styles/globals.css'
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
-import '../styles/menu.scss'
-import '../styles/slider.scss'
-import '../styles/search.scss'
-import '../styles/more.scss'
-import '../styles/play.scss'
-import '../styles/menuMobile.scss'
-import '../styles/falm.scss'
-import '../styles/footer.scss'
-import '../styles/test.scss'
-import '../styles/p404.scss'
-import '../styles/Comment.scss'
-import '../styles/sherd.scss'
-import loadable from '@loadable/component'
-import Theme from '../Components/theme'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const Menu = loadable(() => import('../Components/Menu/Menu'))
+import Head from 'next/head'
+import Menu from '../Components/Menu/Index'
+import Footer from '../Components/Footer/Index'
+import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
+  
   return( 
   <>
-  <ThemeProvider theme={Theme}>
-      <Menu/>
-      <Component {...pageProps} />
-    </ThemeProvider>
+  <div id="gen-loading">
+        <div id="gen-loading-center">
+          <img src="images/logo-1.png" alt="loading" />
+        </div>
+      </div>
+  <Head>
+  <meta charset="utf-8" />
+    <title> Karnosh</title>
 
+   <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+   <link rel="stylesheet" href="/css/style.css" />
+
+   <link rel="stylesheet" href="/css/responsive.css" />
+
+  
+  
+   </Head>
+    <Menu/> 
+      
+
+
+      <Component {...pageProps} />
+      <Footer/>
+
+
+   <script src="/js/jquery-3.6.0.min.js"></script>
+
+   <script src="/js/asyncloader.min.js"></script>
+
+   <script src="/js/bootstrap.min.js"></script>
+
+   <script src="/js/owl.carousel.min.js"></script>
+
+   <script src="/js/jquery.waypoints.min.js"></script>
+
+   <script src="/js/jquery.counterup.min.js"></script>
+
+   <script src="/js/popper.min.js"></script>
+
+   <script src="/js/swiper-bundle.min.js"></script>
+
+   <script src="/js/isotope.pkgd.min.js"></script>
+
+   <script src="/js/jquery.magnific-popup.min.js"></script>
+
+   <script src="/js/slick.min.js"></script>
+
+   <script src="/js/streamlab-core.js"></script>
+
+   <script src="/js/script.js"></script>
   </>
     )
 }

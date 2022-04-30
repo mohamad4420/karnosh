@@ -1,0 +1,128 @@
+$blue :#007bff;
+@keyframes show {
+    0%   {opacity: 0}
+    50%{opacity: 0.2}
+    100% {opacity: 1}
+  }
+.section{
+margin-bottom: 100px;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+-khtml-user-select: none; /* Konqueror HTML */
+-moz-user-select: none; /* Old versions of Firefox */
+-ms-user-select: none; /* Internet Explorer/Edge */
+user-select: none;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    li{
+        margin: 15px;
+    }
+}
+
+.rate{
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    z-index: 1;
+    right: -20px;
+    top: 10px;
+    opacity: 0;
+    transform: scale(0.8);
+}
+.svg{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    left: calc( 50% - 40px );
+    top: calc( 50% - 40px );
+    z-index: 1;
+    opacity: 0;
+}
+.rating{
+position: absolute;
+width: 60px;
+height: 30px;
+z-index: 1;
+right: 20px;
+top: 10px;
+opacity: 0;
+}
+.add{
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    left: 10px;
+    top: 10px;
+    opacity: 0;
+    width: 35px;
+    height: 35px;
+}
+
+.name{
+    
+    width:100;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.background{
+    width: 100%;
+    height: 100%;
+     transition: 0.6s;
+     transform: 0.6s;
+    position: absolute;
+  
+}
+.itemMain{
+   position: relative;
+    width:11.11vw;
+    height: 15.5vw;
+    border-radius: 16px;
+    overflow:hidden;
+    &:hover{
+        .svg {
+             
+            transition: 0.6s;
+            transform: scale(0.6);
+            opacity: 1;
+           cursor: pointer;
+        }
+        .rating , .add,.footer{
+            transform: scale(0.8);
+            transition: 0.6s;
+            opacity: 1;
+           
+        }
+        .rate{
+            transition: 0.6s;
+            opacity: 1;
+           
+        }
+        .background{
+            background: black;
+            opacity: 0.9;
+        }
+
+    }
+}
+
+.info{
+  position:absolute;
+  bottom:0;
+  margin-left: 0.5vw;
+  width:11.01vw;
+  height: 100px;
+  
+}
