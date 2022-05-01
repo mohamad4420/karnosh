@@ -4,15 +4,27 @@ $blue :#007bff;
 $red:rgb(229, 9, 22);
 
   .main_item{
-    margin: 13px;
+    margin: 0 13px;
+
 }
 .gen{
     background: $red;
     padding: 0 10px;
     border-radius: 5px;
 }
+.MainItemHorizantal{
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+}
+.Info{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
 .section{
-margin-bottom: 100px;
+margin-bottom: 30px;
 -webkit-touch-callout: none; /* iOS Safari */
 -webkit-user-select: none; /* Safari */
 -khtml-user-select: none; /* Konqueror HTML */
@@ -147,7 +159,7 @@ opacity: 0;
    position: relative;
     width:20.11vw;
     height: 12.5vw;
-    border-radius: 16px;
+    border-radius: 5px;
     overflow:hidden;
      .nametow{
          opacity: 0;

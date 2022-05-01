@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Navigation, Pagination, Scrollbar, A11y,EffectFade } from 'swiper';
-
+import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -25,20 +25,21 @@ export default function Index(props){
                 navigation
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
+           
               >
                 {
                      props.data.map(item=>{
                       return(
-                         <SwiperSlide>
-                        <div className="item" key={item._id+"BannerStartHome"} style={{background:`url(${item.galary})`}} >
+                         <SwiperSlide key={`swiperSliders${item._id}`}>
+                        <div className="item" key={item._id+"BannerStartHome"}  >
+                        {item.galary.search('http')!=-1?<Image className='image-op' src={item.galary} alt={item.name} layout="fill"/>:<></>}
                       <div className="gen-movie-contain-style-2 h-100">
                         <div className="container h-100">
                           <div className="row flex-row-reverse align-items-center h-100">
                             <div className="col-xl-6">
                               <div className="gen-front-image">
-                                <img src={item.galary} alt="owl-carousel-banner-image" />
+                               
+                              
                                 <a href={`https://www.youtube.com/watch?v=${item.traler}`} className="playBut popup-youtube popup-vimeo popup-gmaps">
                                   {/* Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  */}
                                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="213.7px" height="213.7px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
@@ -92,7 +93,7 @@ export default function Index(props){
                                       <strong>country :</strong>
                                       {item.country.map((c,i)=>{
                                         return(
-                                            <span>
+                                            <span key={`contry${c+i}`}>
                                         <a href="#">
                                         {i>0?" . ":""}{c} </a>
                                       </span>
@@ -106,10 +107,12 @@ export default function Index(props){
                               </div>
                               <div className="gen-movie-action">
                                 <div className="gen-btn-container">
-                                  <a href="single-movie.html" className="gen-button .gen-button-dark">
+                                  <Link href={`/play/${item._id}`}>
+                                  <a  className="gen-button .gen-button-dark">
                                     <i aria-hidden="true" className="fas fa-play" /> <span className="text">Play
                                       Now</span>
                                   </a>
+                                  </Link>
                                 </div>
                               </div>
                             </div>

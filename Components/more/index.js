@@ -1,11 +1,13 @@
 import ItemHorizantal from "../Items/itemHorizantal";
 import Styles from '../../styles/itemHorizantal.module.scss'
+import Image from 'next/image'
 const index = (props) => {
     return ( 
 
         <div>
         {/* breadcrumb */}
-        <div className="gen-breadcrumb" style={{backgroundImage: 'url("/images/background/asset-25.jpeg")'}}>
+        <div className="gen-breadcrumb" >
+        <Image  src="/images/background/asset-25.jpeg" alt="img-more" layout="fill"/>
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-12">
@@ -37,7 +39,7 @@ const index = (props) => {
                       {
                         props.data.map(item => {
                           return(
-                            <div className={Styles.main_item}>
+                            <div className={Styles.main_item} key={`moreItem${item._id}`}>
                              <ItemHorizantal key={item._id+"moreItem"} data={item}/>
                             </div>
                           )

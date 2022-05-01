@@ -11,7 +11,7 @@ export default function Index(){
                       <div className="gen-carousel-movies-style-1 movie-grid style-1">
                         <div className="gen-movie-contain">
                           <div className="gen-movie-img">
-                            <img src="images/background/asset-14.jpeg" alt="streamlab-image" />
+                            <img src="/images/background/asset-14.jpeg" alt="streamlab-image" />
                             <div className="gen-movie-add">
                               <div className="wpulike wpulike-heart">
                                 <div className="wp_ulike_general_class wp_ulike_is_not_liked">

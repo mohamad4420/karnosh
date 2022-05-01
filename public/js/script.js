@@ -17,6 +17,7 @@ Design and Developed by: Gentechtree.com
 [ End table content ]
 ======================================
 */
+import $ from 'jquery';
 (function(jQuery) {
     "use strict";
     jQuery(window).on('load', function(e) {

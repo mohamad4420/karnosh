@@ -1,6 +1,5 @@
-
 import More from '../../Components/more/index'
-const index = ({data}) => {
+const  index = ({data}) => {
     return ( 
     <>
     <More data={data}/>
@@ -9,12 +8,10 @@ const index = ({data}) => {
 }
  
 export async function getStaticProps(ctx) {
-  console.log(ctx.params.id)
      // skip
      //limit
      //genres
      //type
-     //const res = await axios.post(`${process.env.url}/DataVideo/select`,{})
     const res = await fetch(`${process.env.url}/DataVideo/select`,{
       headers: {
         'Accept': 'application/json',
@@ -37,7 +34,7 @@ export async function getStaticProps(ctx) {
       // Next.js will attempt to re-generate the page:
       // - When a request comes in
       // - At most once every 10 seconds
-      revalidate: 10, // In seconds
+      revalidate: 3600, // In seconds
     }
   }
   
@@ -48,8 +45,23 @@ export async function getStaticProps(ctx) {
 
     const data =[
       {
-        id:"movie_wth",data:"data"
-      }
+        id:"movie_wth"
+      },
+      {
+        id:"movie_mt"
+      },
+      {
+        id:"movie_md"
+      },
+      {
+        id:"movie_ar"
+      },
+      {
+        id:"movie_tr"
+      }, 
+      {
+        id:"movie_hn"
+      },
     ]
     // Get the paths we want to pre-render based on data
     const paths = data.map((post) => ({
